@@ -10,6 +10,7 @@ header {
     background-color: white;
     margin-bottom: 30px;
     overflow: auto;
+    height: 90px;
 }
 
 main {
