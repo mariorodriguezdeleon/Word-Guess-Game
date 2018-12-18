@@ -1,10 +1,15 @@
 body {
-    background-color: grey;
+    background-color: rgb(114, 112, 112);
+    color: #777;
+    margin: auto;
+    height: 100%;
 }
 
 header {
     width: 100%;
     background-color: white;
+    margin-bottom: 30px;
+    overflow: auto;
 }
 
 main {
@@ -29,3 +34,10 @@ footer {
     width: 100%;
     text-align: center
 }
+
+/* ID's */
+
+
+/* Classes */
+
+/* @media queries */
