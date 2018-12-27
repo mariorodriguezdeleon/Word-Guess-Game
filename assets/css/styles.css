@@ -1,4 +1,15 @@
+/*Color Pallet:
+    #98c1d9 - Pale Cerulean
+    #6969b3 - Toolbox
+    #533a7b - cyber Grape
+    #4b244a - Purple Taupe
+    #25171a - Eerie Black
+*/
+
 body {
+    background-image: url(../images/52b2f017cb70aead900d06a78e728d5e.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /*Need to properly size the background image*/
     background-color: rgb(114, 112, 112);
     color: #777;
     margin: auto;
@@ -7,14 +18,16 @@ body {
 
 header {
     width: 100%;
-    background-color: white;
+    background-color: #25171a;
+    color: #98c1d9; 
     margin-bottom: 30px;
     overflow: auto;
     height: 90px;
 }
 
 main {
-    background-color: #ffffff;
+    background-color: #533a7b;
+    color: #98c1d9;
     display: block;
     max-width: 960px;
     margin-left: auto;
@@ -22,12 +35,13 @@ main {
     height: auto;
     border: #dddddd;
     overflow: auto;
+    border-radius: 5px;
 }
 
 footer {
-    background-color: #fff;
+    background-color: #25171a;
     border-top: 5px solid #484ab6;
-    color: black;
+    color:#98c1d9;
     padding-top: 20px;
     position: fixed;
     height: 75px;
