@@ -4,7 +4,7 @@
     
 document.addEventListener('DOMContentLoaded', function() {
 
-    alert("Message after DOM loaded");
+//    alert("Message after DOM loaded");
 
 });
     

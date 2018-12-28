@@ -12,8 +12,8 @@ body {
     background-size: cover; /*Need to properly size the background image*/
     background-color: rgb(114, 112, 112);
     color: #777;
-    margin: auto;
-    height: 100%;
+/*    margin: auto;*/
+/*    height: 100%;*/
 }
 
 header {
@@ -38,6 +38,7 @@ main {
     border-radius: 5px;
 }
 
+
 footer {
     background-color: #25171a;
     border-top: 5px solid #484ab6;
@@ -52,7 +53,40 @@ footer {
 
 /* ID's */
 
+#lettersToGuess {
+    margin: 15px;
+    height: 50px;
+    text-align: center;
+}
+
+#guessedLetters {
+    margin: 15px;
+    height: 35px;
+    text-align: center;
+}
+
+#stage {
+    height: 500px;
+    margin-top: 75px;
+}
+
+#information{
+    text-align: center;
+    display: block;
+    height: 200px;
+}
+
+
 
 /* Classes */
+
+.container {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.row {
+    
+}
 
 /* @media queries */
