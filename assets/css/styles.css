@@ -76,6 +76,7 @@ footer {
 
 #stage {
     height: 500px;
+    opacity: .95;
 }
 
 #information{
