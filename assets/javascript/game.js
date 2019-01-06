@@ -1,39 +1,37 @@
 (function(){
+    
+    
+})();
 "use strict";
 
 // VARIABLES ======================================================
     
-    //list of games
+//list of games
 let gameList = ["pac man", "galaga", 
                 "centipede", "frogger", 
                 "donkey kong", "dig dug", 
-                "tempest", "q*bert", 
-                "joust", "mario bros.", 
+                "tempest", "q bert", 
+                "joust", "mario bros", 
                 "tapper"];
-
 let gameToGuess = [];
-    
-let wins = 0;
-    
-let losses = 0;
-    
 let playerGuesses = [];
-
-let guessesLeft = 0;
-    
-let wordBlanksEle = document.getElementById('lettersToGuess');
-    
 let wordPlaceHolder = [];
     
+let wins = 0;
+let losses = 0;
+let guessesLeft = 10;
+
 let COUNTER = {
     
     //ADD YOUR COUNTERS HERE!!
     
 }
 
+let wordBlanksEle = document.getElementById('lettersToGuess');
+
 // FUNCTIONS ======================================================
 
-    //randomizes a word to guess and creates a char array of the word
+//randomizes a word to guess and creates a char array of the word
 function generateRandomGameName () {
 
     let indexOfRandomGame = Math.floor(Math.random() * gameList.length); //randomly generate the index of the word to guess
@@ -46,38 +44,37 @@ function generateRandomGameName () {
 }
     
 function setStage() {
-    //set stage code here
+    
     for (let i = 0; i < gameToGuess.length; i++) {
-        wordPlaceHolder[i] = ' _ ';
+
+        if ( gameToGuess[i] === ' ' ) {
+            
+            wordPlaceHolder[i] = ' ';
+            
+        } else {
+            wordPlaceHolder[i] = '_ ';
+        }
     }
     
-    wordBlanksEle.textContent = wordPlaceHolder.join(' ');
+    wordBlanksEle.textContent = wordPlaceHolder.join('');
+    
+    document.getElementById("guesses-left").textContent = guessesLeft;
 }
     
-    //helper function to troubleshoot game
-function printCharArray() {
+function checkGuess(guess) {
     
-    //helper function to iterate over array for troubleshooting
-     for ( let i = 0; i < gameToGuess.length; i++){
-         console.log(gameToGuess[i]);
-     };
+    // add check to see if player still has guesses left
+    if (guessesLeft === 0 ){
+        triggerLoss();
+        return;
+    }
     
-    console.log(gameToGuess);
-    
-}
-    
-function checkGuess(guess){
-    
-    // add function to check if the player still has guesses left======
-    
-    // update Counters as required ====
+    // update Counters as required
+    playerGuesses.push(guess);
     
     gameToGuess.forEach(function(char, i){
         
         if (char === guess) {
-            //iterate over array and find the index of the key pressed, potentially many
-            //if found update the correct space in the stage
-            //if not update the guesses and guesses left
             wordPlaceHolder [i] = guess;  
         }  
         
@@ -88,33 +85,47 @@ function checkGuess(guess){
         
         // decrement guessesLeft
     })
+    
     console.log(wordPlaceHolder);   
 }
-        
+    
+// Input validation
+function isValid(guess) {
+    //add regex to validate user input
+    return /^[A-Za-z]$/.test(guess);
+}
+    
 // Display Win
 function triggerWin() {
   document.getElementById('game-won').classList.remove('hide');
 }
+    
 // Display loss.
 function triggerLoss() {
   document.getElementById('game-lose').classList.remove('hide');  
 }
     
-function isValid(guess) {
-    //add regex to validate user input
-    return /^[A-Za-z]$/.test(guess);
+//helper function to troubleshoot game
+function printCharArray() {
+    
+    //helper function to iterate over array for troubleshooting
+     for ( let i = 0; i < gameToGuess.length; i++){
+         console.log(gameToGuess[i]);
+     };
+    
+    console.log(gameToGuess);  
 }
 
-
-// FUNCTION CALLS =================================================
+// FUNCTION CALLS TO INITIALIZE GAME ==============================
 
 generateRandomGameName(); //call the function to set random word to guess
     
 printCharArray();
     
-setStage();
+setStage(); //call function to set the stage
 
-// MAIN ===========================================================   
+// MAIN ===========================================================  
+    
 document.onkeydown = function(e) {
     
     if (isValid(e.key)) {
@@ -123,5 +134,3 @@ document.onkeydown = function(e) {
         
     }
 }
-    
-})();
