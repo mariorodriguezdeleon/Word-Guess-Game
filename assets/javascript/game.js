@@ -6,7 +6,8 @@
 
 // VARIABLES ======================================================
     
-//list of games
+//list of games - try to push them out to an external data file
+//best to decouple the data
 let gameList = ["pac man", "galaga", 
                 "centipede", "frogger", 
                 "donkey kong", "dig dug", 
@@ -25,7 +26,7 @@ let COUNTER = {
     
     //ADD YOUR COUNTERS HERE!!
     
-}
+} //work on developing this more
 
 let wordBlanksEle = document.getElementById('lettersToGuess');
 
@@ -67,25 +68,15 @@ function checkGuess(guess) {
     if (guessesLeft === 0 ){
         triggerLoss();
         return;
+    } else {
+        // iterate over game word to guess and compare with guess
+        gameToGuess.forEach(function(char, i) {
+            if (char === guess) {
+                wordPlaceHolder [i] = guess;
+            }  
+            document.getElementById('lettersToGuess').textContent = wordPlaceHolder.join('');
+        })  
     }
-    
-    // update Counters as required
-    playerGuesses.push(guess);
-    
-    gameToGuess.forEach(function(char, i){
-        
-        if (char === guess) {
-            wordPlaceHolder [i] = guess;  
-        }  
-        
-        document.getElementById('lettersToGuess').textContent = wordPlaceHolder.join('');
-        
-        //check to see if the wordPlaceHolder === wordToGuess - if it does the player wins
-        //triggerwin();
-        
-        // decrement guessesLeft
-    })
-    
     console.log(wordPlaceHolder);   
 }
     
