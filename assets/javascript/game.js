@@ -57,7 +57,6 @@ function setStage() {
     //helper function to troubleshoot game
 function printCharArray() {
     
-    COUNTER
     //helper function to iterate over array for troubleshooting
      for ( let i = 0; i < gameToGuess.length; i++){
          console.log(gameToGuess[i]);
@@ -69,6 +68,10 @@ function printCharArray() {
     
 function checkGuess(guess){
     
+    // add function to check if the player still has guesses left======
+    
+    // update Counters as required ====
+    
     gameToGuess.forEach(function(char, i){
         
         if (char === guess) {
@@ -77,19 +80,30 @@ function checkGuess(guess){
             //if not update the guesses and guesses left
             wordPlaceHolder [i] = guess;  
         }  
+        
+        document.getElementById('lettersToGuess').textContent = wordPlaceHolder.join('');
+        
+        //check to see if the wordPlaceHolder === wordToGuess - if it does the player wins
+        //triggerwin();
+        
+        // decrement guessesLeft
     })
     console.log(wordPlaceHolder);   
 }
+        
+// Display Win
+function triggerWin() {
+  document.getElementById('game-won').classList.remove('hide');
+}
+// Display loss.
+function triggerLoss() {
+  document.getElementById('game-lose').classList.remove('hide');  
+}
     
-//function updateBlanks() {
-//    //add logic to update blanks if the guesses are correct.  Do this 
-//    //by iterating over the wordPlaceHolder array if a letter is valid
-//    for (let i = 0; i < gameToGuess.length; i++) {
-//        wordPlaceHolder[i] = ;
-//    }
-//    
-//    wordBlanksEle.textContent = wordPlaceHolder.join(' ');
-//}
+function isValid(guess) {
+    //add regex to validate user input
+    return /^[A-Za-z]$/.test(guess);
+}
 
 
 // FUNCTION CALLS =================================================
@@ -103,8 +117,11 @@ setStage();
 // MAIN ===========================================================   
 document.onkeydown = function(e) {
     
-   checkGuess(e.key.toLowerCase());
-       
+    if (isValid(e.key)) {
+        
+        checkGuess(e.key.toLowerCase()); //could remove toLowerCase after validation
+        
+    }
 }
     
 })();

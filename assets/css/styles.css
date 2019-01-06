@@ -89,6 +89,10 @@ footer {
 
 /* Classes */
 
+.hide {
+    display: none;
+}
+
 .container {
     min-height: 100%;
     overflow: hidden;
