@@ -9,7 +9,7 @@
 body {
     background-image: url(../images/52b2f017cb70aead900d06a78e728d5e.jpg);
     background-repeat: no-repeat;
-    background-size: cover; /*Need to properly size the background image*/
+    background-size: cover; Need to properly size the background image
     background-color: rgb(114, 112, 112);
     color: #777;
     margin: auto;
@@ -19,12 +19,10 @@ body {
 header {
     width: 100%;
     background-color: #25171a;
-/*
     color: #98c1d9; 
     margin-bottom: 30px;
     overflow: auto;
     height: 90px;
-*/
 }
 
 /*
@@ -65,36 +63,39 @@ footer {
 
 /* ID's */
 
-#lettersToGuess {
 /*
+#lettersToGuess {
     margin: 15px;
     height: 50px;
     text-align: center;
     white-space: pre;
-*/
 }
+*/
 
-#guessedLetters {
 /*
+#guessedLetters {
     margin: 15px;
     height: 35px;
     text-align: center;
-*/
 }
+*/
 
-#stage {
 /*
+#stage {
     height: 500px;
     opacity: .95;
-*/
 }
+*/
 
 #information{
-/*
     text-align: center;
-    display: block;
-    height: 200px;
-*/
+/*    display: block;*/
+/*    height: 200px;*/
+    background-color: #533a7b;
+    color: aliceblue;
+    font-size: 1rem;
+;
+    
 }
 
 /* Classes */
@@ -102,6 +103,12 @@ footer {
 .hide {
     display: none;
 }
+
+.card {
+    margin-bottom: 10px;
+    width: 100%; 
+}
+
 
 /*
 .container {
