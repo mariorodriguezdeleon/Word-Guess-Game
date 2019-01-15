@@ -1,8 +1,7 @@
-(function(){
-    
-    
-})();
-"use strict";
+(function () {
+    'use strict';
+}());
+
 
 // VARIABLES ======================================================
     
@@ -11,9 +10,9 @@
 let gameList = ["pac man", "galaga", 
                 "centipede", "frogger", 
                 "donkey kong", "dig dug", 
-                "tempest", "q bert", 
-                "joust", "mario bros", 
-                "tapper"];
+                "tempest", "joust", 
+                "mario bros", "tapper"];
+
 let gameToGuess = [];
 let playerGuesses = [];
 let wordPlaceHolder = [];
@@ -26,11 +25,12 @@ let COUNTER = {
     
     //ADD YOUR COUNTERS HERE!!
     
-} //work on developing this more
+} //TO DO: work on developing this more
 
 let wordBlanksEle = document.getElementById('lettersToGuess');
 
 // FUNCTIONS ======================================================
+
 
 //randomizes a word to guess and creates a char array of the word
 function generateRandomGameName () {
@@ -42,7 +42,7 @@ function generateRandomGameName () {
     gameToGuess = gameList[indexOfRandomGame].split(''); //retrieve the game name and parse the string into an array
 
     // console.log(gameToGuess); //print array to troubleshoot parsing
-}
+} //TO DO:
     
 function setStage() {
     
@@ -60,7 +60,7 @@ function setStage() {
     wordBlanksEle.textContent = wordPlaceHolder.join('');
     
     document.getElementById("guesses-left").textContent = guessesLeft;
-}
+} //TO DO:
     
 function checkGuess(guess) {
     
@@ -78,23 +78,23 @@ function checkGuess(guess) {
         })  
     }
     console.log(wordPlaceHolder);   
-}
+} //TO DO:
     
 // Input validation
 function isValid(guess) {
     //add regex to validate user input
     return /^[A-Za-z]$/.test(guess);
-}
+} //TO DO:
     
 // Display Win
 function triggerWin() {
   document.getElementById('game-won').classList.remove('hide');
-}
+} //TO DO:
     
 // Display loss.
 function triggerLoss() {
   document.getElementById('game-lose').classList.remove('hide');  
-}
+} //TO DO:
     
 //helper function to troubleshoot game
 function printCharArray() {
@@ -106,6 +106,7 @@ function printCharArray() {
     
     console.log(gameToGuess);  
 }
+
 
 // FUNCTION CALLS TO INITIALIZE GAME ==============================
 
@@ -125,3 +126,8 @@ document.onkeydown = function(e) {
         
     }
 }
+
+
+
+//ADDITIONAL NOTES, TO DO: 
+// 1. Be sure to add this project to your portfolio.

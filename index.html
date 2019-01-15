@@ -14,43 +14,47 @@
     <body>
         
         <header>
-                <h2>Word Guessing Game</h2>
-                <h4>Name That Arcade Game</h4>
+            <h2>Word Guessing Game</h2>
+            <h4>Name That Arcade Game</h4>
         </header>
-        
+
         <div class="container text-center">
-            
-            <div class="row justify-content-md-center">
-            
-                <div class="col-sm-6 justify-content-center">
-                    
-                    <div id="information">
-                        <p>Provide Small Interesting tid bits of in formation games</p>
+            <div class="row justify-content-md-center game-board">
+                <div class='col-sm-8'>
+                    <div id='information' class='card'>
                         <p>Press Any Key to Get Started</p>
                     </div>
 
-                    <div class="card">
-                        <div id="lettersToGuess"></div>
+                    <div id='word-to-guess-card' class="card">
+                        <div class="card-body">
+                        <h2 id="lettersToGuess"></h2>
+                        </div>
                     </div>
 
                     <div id="game-won" class="hide">You won!</div>
                     <div id="game-lose" class="hide">You lose!</div>
-
-                    <div id="player-guesses"></div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Guesses Left</h5>
-                            <p class="card-text" id="guesses-left">0</p>
+                    
+                    <div class="row score-board">
+                        
+                        <div class="col-xm-4 guesses-left">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Guesses Left</h5>
+                                    <h5 class="card-text" id="guesses-left">0</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>       
-                
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Guesses Wrong</h5>
-                            <p class="card-text" id="guesses-wrong">0</p>
+                        
+                        <div class="col-xm-4 wrong-guesses">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Guesses Wrong</h5>
+                                    <h5 class="card-text" id="guesses-wrong">0</h5>
+                                </div>
+                            </div>  
                         </div>
-                    </div>       
+                    </div>
+                    
                 </div>
             </div>
         </div>

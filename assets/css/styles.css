@@ -1,10 +1,10 @@
-/*Color Pallet:
+/*Color Pallet: =================================================
     #98c1d9 - Pale Cerulean
     #6969b3 - Toolbox
     #533a7b - cyber Grape
     #4b244a - Purple Taupe
     #25171a - Eerie Black
-*/
+================================================================*/
 
 body {
     background-image: url(../images/52b2f017cb70aead900d06a78e728d5e.jpg);
@@ -25,30 +25,6 @@ header {
     height: 90px;
 }
 
-/*
-main {
-    background-color: #533a7b;
-    color: #98c1d9;
-    display: block;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    border: #dddddd;
-    overflow: auto;
-    border-radius: 5px;
-}
-*/
-
-p {
-/*    margin: 15px;*/
-/*
-    margin-right: 15px;
-    margin-left: 15px;
-*/
-}
-
-
 footer {
     background-color: #25171a;
     border-top: 5px solid #484ab6;
@@ -61,44 +37,16 @@ footer {
     text-align: center
 }
 
-/* ID's */
-
-/*
-#lettersToGuess {
-    margin: 15px;
-    height: 50px;
-    text-align: center;
-    white-space: pre;
-}
-*/
-
-/*
-#guessedLetters {
-    margin: 15px;
-    height: 35px;
-    text-align: center;
-}
-*/
-
-/*
-#stage {
-    height: 500px;
-    opacity: .95;
-}
-*/
+/* ID'S ======================================================= */ 
 
 #information{
     text-align: center;
-/*    display: block;*/
-/*    height: 200px;*/
     background-color: #533a7b;
     color: aliceblue;
     font-size: 1rem;
-;
-    
 }
 
-/* Classes */
+/* CLASSES =====================================================*/
 
 .hide {
     display: none;
@@ -109,13 +57,18 @@ footer {
     width: 100%; 
 }
 
-
-/*
-.container {
-    min-height: 100%;
-    overflow: hidden;
+.guesses-left {
+    width: 49%;
+    margin-right: 11px;
 }
-*/
 
+.wrong-guesses {
+    width: 49%;
+}
 
-/* @media queries */
+.score-board {
+    width: 100%;
+    margin: 0px;
+}
+
+/* @media queries ==============================================*/
